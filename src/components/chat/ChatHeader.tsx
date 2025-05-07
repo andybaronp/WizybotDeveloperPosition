@@ -1,11 +1,16 @@
 import { ChevronDown, ShoppingCart } from "lucide-react";
 import logo from "../../assets/wizybot.webp";
-const ChatHeader = () => {
+
+interface ChatHeaderProps {
+  toggleMinimize: () => void;
+}
+
+const ChatHeader = ({ toggleMinimize }: ChatHeaderProps) => {
   return (
     <div>
-      <div className="flex items-center justify-between bg-gradient-to-r from-blue-950  from-80%  to-blue-800 text-white p-2 ">
+      <div className="flex items-center justify-between bg-gradient-to-r from-blue-950 from-80% to-blue-800 text-white p-2 ">
         <div className="flex items-center">
-          <div className="  rounded-full w-8 h-8 flex items-center justify-center mr-2">
+          <div className="rounded-full w-8 h-8 flex items-center justify-center mr-2">
             <img src={logo} alt="Wizybot" className="rounded-full" />
           </div>
           <div>
@@ -15,15 +20,18 @@ const ChatHeader = () => {
         </div>
         <div className="flex items-center">
           <ShoppingCart className="w-5 h-5 mr-2" />
-          <ChevronDown className="w-5 h-5 cursor-pointer hover:scale-110 transition-all" />
+          <ChevronDown
+            className="w-5 h-5 cursor-pointer hover:scale-110 transition-all"
+            onClick={toggleMinimize}
+          />
         </div>
       </div>
       {/* Wave Effect */}
-      <div className="bg-gradient-to-r from-blue-950  from-80%  to-blue-800 w-full  ">
+      <div className="bg-gradient-to-r from-blue-950 from-80% to-blue-800 w-full ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 80"
-          className=" "
+          className=""
         >
           <path
             fill="#f9fafb"
@@ -35,4 +43,5 @@ const ChatHeader = () => {
     </div>
   );
 };
+
 export default ChatHeader;

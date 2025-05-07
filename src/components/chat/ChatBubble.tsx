@@ -8,7 +8,7 @@ const ChatBubble = ({ message, isAgent }: ChatBubbleProps) => {
     <div className={`flex ${isAgent ? "justify-start" : "justify-end"} `}>
       <div
         className={`${
-          isAgent ? "bg-gray-200 " : "bg-sky-600/50  "
+          isAgent ? "bg-gray-200 " : "bg-cyan-600/60 "
         } rounded-lg p-3 shadow-sm text-gray-900`}
       >
         <p className="text-sm">{message.text}</p>
