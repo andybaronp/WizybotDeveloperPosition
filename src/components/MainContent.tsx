@@ -1,7 +1,7 @@
 const MainContent = () => {
   return (
     <main className="flex-grow flex items-center justify-center  ">
-      <div className="text-white max-w-2xl px-4 text-center">
+      <div className="text-white max-w-3xl px-4 text-center">
         <div>
           <h1 className="text-4xl  sm:text-7xl  mb-4">
             Wizybot: Chatbot de IA para ecommerce
