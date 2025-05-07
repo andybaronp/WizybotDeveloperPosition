@@ -1,4 +1,4 @@
-const AppLoyout = ({children}: {children: React.ReactNode}) => {
-  return <main>{children}</main>
-}
-export default AppLoyout
+const AppLoyout = ({ children }: { children: React.ReactNode }) => {
+  return <div className="min-h-screen flex flex-col">{children}</div>;
+};
+export default AppLoyout;
