@@ -1,7 +1,10 @@
+import AppLoyout from "./components/layout/AppLoyout"
+import Header from "./components/layout/Header"
+
 function App() {
-  return (
-    <div className='bg-white p-6 rounded-lg shadow-lg max-w-sm text-center'></div>
-  )
+  return <AppLoyout>
+    <Header />
+  </AppLoyout>
 }
 
 export default App
