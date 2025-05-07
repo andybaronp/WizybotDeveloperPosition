@@ -9,9 +9,9 @@ const ChatBubble = ({ message, isAgent }: ChatBubbleProps) => {
       <div
         className={`${
           isAgent ? "bg-gray-200 " : "bg-cyan-600/60 "
-        } rounded-lg p-3 shadow-sm text-gray-900`}
+        } rounded-lg p-3 shadow-sm text-gray-900 max-w-[80%] break-words`}
       >
-        <p className="text-sm">{message.text}</p>
+        <p className="text-sm ">{message.text}</p>
         <p className="text-xs text-gray-600 mt-1">{message.time}</p>
       </div>
     </div>
