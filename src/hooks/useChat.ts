@@ -11,7 +11,7 @@ interface ChatMessage {
 export const useChat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const { quotes, setGetRandomQuote } = useRamdomQuotes();
+  const { getRandomQuotes } = useRamdomQuotes();
   const responseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   //welcome message
@@ -55,13 +55,13 @@ export const useChat = () => {
     setMessages((prev) => [...prev, newMessage]);
     setLoading(true);
 
-    const timerId = setTimeout(() => {
+    const timerId = setTimeout(async () => {
       setLoading(false);
-      if (text.toLowerCase() !== "horla") {
-        setGetRandomQuote(true);
-      }
+
       const agentText =
-        text.toLowerCase() === "horla" ? "hola como vas" : quotes;
+        text.toLowerCase() === "horla"
+          ? "hola como vas"
+          : await getRandomQuotes();
       const agentMessage: ChatMessage = {
         id: uuid(),
         text: agentText,
