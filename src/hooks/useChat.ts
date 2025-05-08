@@ -4,6 +4,7 @@ import type { ChatMessage } from "../interfaces/ChatMessage";
 import { CONSTANTS } from "../utils/constans";
 import { formatDate } from "../utils/dates";
 import apiQuotes from "../api/apiQuotes";
+import { newMessage } from "../utils/newMessage";
 
 export const useChat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -64,19 +65,4 @@ export const useChat = () => {
   };
 
   return { messages, sendMessage, loading };
-};
-
-const newMessage = (
-  text: string,
-  isAgent: boolean,
-  showProductRecommendation: boolean = false
-) => {
-  const newMessage: ChatMessage = {
-    id: uuid(),
-    text,
-    isAgent,
-    time: formatDate(),
-    showProductRecommendation,
-  };
-  return newMessage;
 };
