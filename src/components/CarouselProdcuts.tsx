@@ -8,16 +8,15 @@ export default function CarouselProducts() {
   const handleDotClick = (index: number) => {
     setActiveItemIndex(index);
   };
-  console.log(products);
-  if (products.length === 0) return null; // evitar error al renderizar sin datos
 
+  if (products.length === 0) return null;
   return (
     <div className="flex gap-3  flex-col overflow-x-hidden p-2   bg-white rounded-xl   ">
       <div className="flex gap-2 overflow-x-hidden">
         <div className="  w-full   min-w-[90%] rounded-xl  h-24  p-2 flex gap-2  items-center   ">
           <img
             src={products[activeItemIndex].imageUrl}
-            alt={products[activeItemIndex].displayTitle}
+            alt={products[activeItemIndex].displayTitle.slice(0, 60)}
             className="size-14 object-contain rounded-xl  "
           />
 

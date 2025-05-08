@@ -14,7 +14,7 @@ const ChatWindow = () => {
   const { messages, sendMessage, loading } = useChat();
 
   return (
-    <div className="relative px-2 w-full bg-red-700">
+    <div className="relative px-2 w-full  ">
       <div className="">
         {isMinimized ? (
           <div className="absolute bottom-5 right-4 flex flex-col items-center cursor-pointer hover:scale-110 transition-transform delay-100">
@@ -37,7 +37,7 @@ const ChatWindow = () => {
             </div>
           </div>
         ) : (
-          <div className="absolute bottom-5 right-1/2 translate-x-1/2 sm:right-5 sm:translate-x-0 flex flex-col h-[90vh] sm:h-[704px] max-w-sm w-[380px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
+          <div className="absolute bottom-5 right-1/2 translate-x-1/2 sm:right-5 sm:translate-x-0 flex flex-col h-[9vh] sm:h-[704px] max-w-sm w-[380px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
             <ChatHeader toggleMinimize={toggleMinimize} />
             <ChatMessages messages={messages} loading={loading} />
             <ChatInput onSend={sendMessage} />

@@ -47,7 +47,10 @@ export const useChat = () => {
     setLoading(true);
     const timerId = setTimeout(async () => {
       setLoading(false);
-      if (text.toLowerCase() === CONSTANTS.PRODUCT_RECOMMENDATION_TRIGGER) {
+      if (
+        text.toLowerCase().trim() ===
+        CONSTANTS.PRODUCT_RECOMMENDATION_TRIGGER.toLowerCase()
+      ) {
         const agentMessage = newMessage("¡Show me some products!", true, true);
         setMessages((prev) => [...prev, agentMessage]);
       } else {

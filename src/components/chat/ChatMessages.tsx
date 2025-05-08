@@ -13,9 +13,19 @@ const ChatMessages = ({
 }) => {
   const endOfMessagesRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    const hasProductRecommendation = messages.some(
+      (m) => m.showProductRecommendation
+    );
+    if (hasProductRecommendation) {
+      const timeout = setTimeout(() => {
+        endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
 
+      return () => clearTimeout(timeout);
+    } else if (messages.length > 1) {
+      endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
   return (
     <div
       className="flex-1 p-3 overflow-y-auto flex flex-col gap-2 "
