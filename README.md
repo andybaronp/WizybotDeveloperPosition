@@ -120,7 +120,7 @@ npm test
 
 ![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746739011/wizy/zuvlwrzisnmk6fzdkdi3.png)
 
-![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746739011/wizy/opqstjpiwgwlxcvcd7wc.png)
+![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746745516/wizy/bszvzx9ddltsjojtvqeb.png)
 
 ## Contributing
 
