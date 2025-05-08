@@ -2,6 +2,10 @@
 
 This project is a chat application component developed as part of the Wizybot Developer Position. It includes a chat input component with testing setup using Vitest and React Testing Library.
 
+## Demo
+
+👉 [View Demo](https://wizybot-developer-position.vercel.app/)
+
 ## Project Setup
 
 ### Prerequisites
