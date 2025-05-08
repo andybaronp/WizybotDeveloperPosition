@@ -1,54 +1,117 @@
-# React + TypeScript + Vite
+# Wizybot Developer Position
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a chat application component developed as part of the Wizybot Developer Position. It includes a chat input component with testing setup using Vitest and React Testing Library.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (version 20.X.X)
+- npm (version 10.X.X)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/andybaronp/WizybotDeveloperPosition.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd WizybotDeveloperPosition
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Development
+
+To start the development server, run:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Testing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project uses Vitest for testing. To run the tests, execute:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm test
+
+
 ```
+
+## Project Structure
+
+```bash
+ └── WizybotDeveloperPosition
+    └── public
+        └── vite.svg
+        └── wizybot-favicon.png
+    └── src
+        └── api
+            └── apiProdcutsRecommendation.ts
+            └── apiQuotes.ts
+        └── App.css
+        └── App.tsx
+        └── assets
+            └── wizybot-logo.png
+            └── wizybot.webp
+        └── components
+            └── CarouselProdcuts.tsx
+            └── chat
+                └── ChatBubble.tsx
+                └── ChatFooter.tsx
+                └── ChatHeader.tsx
+                └── ChatInput.tsx
+                └── ChatMessages.tsx
+                └── ChatTypingIndicator.tsx
+                └── ChatWindow.tsx
+            └── layout
+                └── AppLoyout.tsx
+                └── Header.tsx
+            └── MainContent.tsx
+        └── hooks
+            └── useChat.ts
+            └── useProductsRecommendations.ts
+        └── index.css
+        └── interfaces
+            └── ChatMessage.ts
+            └── Prodcuts.ts
+        └── main.tsx
+        └── README.md
+        └── test
+            └── ChatInput.test.tsx
+            └── newMessage.test.ts
+            └── setup.ts
+        └── utils
+            └── constans.ts
+            └── dates.ts
+            └── getRadoms.ts
+            └── newMessage.ts
+        └── vite-env.d.ts
+    └── .gitignore
+    └── eslint.config.js
+    └── index.html
+    └── package-lock.json
+    └── package.json
+    └── README.md
+    └── tsconfig.app.json
+    └── tsconfig.json
+    └── tsconfig.node.json
+    └── vite.config.ts
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any features, bug fixes, or improvements.
+
+## License
+
+This project is licensed under the MIT License.
