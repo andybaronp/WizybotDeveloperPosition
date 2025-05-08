@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
-import type { ChatMessage } from "../../types/ChatMessage";
+import type { ChatMessage } from "../../interfaces/ChatMessage";
 import ChatBubble from "./ChatBubble";
 import ChatTypingIndicator from "./ChatTypingIndicator";
+import CarouselProducts from "../CarouselProdcuts";
 
 const ChatMessages = ({
   messages,
@@ -20,9 +21,17 @@ const ChatMessages = ({
       className="flex-1 p-3 overflow-y-auto flex flex-col gap-2 "
       id="chat-window"
     >
-      {messages.map((message, index) => (
-        <ChatBubble key={index} message={message} isAgent={message.isAgent} />
-      ))}
+      {messages.map((message, index) =>
+        message.showProductRecommendation ? (
+          <div key={index} className="flex justify-start w-full">
+            <div className="rounded-lg shadow-sm w-full">
+              <CarouselProducts />
+            </div>
+          </div>
+        ) : (
+          <ChatBubble key={index} message={message} isAgent={message.isAgent} />
+        )
+      )}
       {loading && <ChatTypingIndicator />}
       <div ref={endOfMessagesRef} />
     </div>
