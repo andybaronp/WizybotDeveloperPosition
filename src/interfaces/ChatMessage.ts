@@ -3,4 +3,5 @@ export interface ChatMessage {
   text: string;
   isAgent: boolean;
   time: string;
+  showProductRecommendation: boolean;
 }
