@@ -14,7 +14,7 @@ This project is a chat application component developed as part of the Wizybot De
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/WizybotDeveloperPosition.git
+   git clone https://github.com/andybaronp/WizybotDeveloperPosition.git
    ```
 
 2. Navigate to the project directory:
@@ -47,7 +47,7 @@ npm test
 
 ## Project Structure
 
-```
+```bash
  └── WizybotDeveloperPosition
     └── public
         └── vite.svg
