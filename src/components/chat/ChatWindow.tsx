@@ -35,7 +35,7 @@ const ChatWindow = () => {
           </div>
         </div>
       ) : (
-        <div className=" absolute bottom-5 right-1/2 translate-x-1/2 sm:right-5 sm:translate-x-0 flex flex-col h-[90vh] sm:h-[704px] max-w-sm w-[380px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
+        <div className=" absolute bottom-5 right-1/2 translate-x-1/2 sm:right-5 sm:translate-x-0 flex flex-col h-[80vh] sm:h-[704px] max-w-sm w-[380px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
           <ChatHeader toggleMinimize={toggleMinimize} />
           <ChatMessages messages={messages} loading={loading} />
           <ChatInput onSend={sendMessage} />
