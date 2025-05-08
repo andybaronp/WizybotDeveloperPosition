@@ -7,31 +7,38 @@ interface ChatHeaderProps {
 
 const ChatHeader = ({ toggleMinimize }: ChatHeaderProps) => {
   return (
-    <div>
-      <div className="flex items-center justify-between bg-gradient-to-r from-blue-950 from-80% to-blue-800 text-white p-2 ">
-        <div className="flex items-center">
-          <div className="rounded-full w-8 h-8 flex items-center justify-center mr-2">
-            <img src={logo} alt="Wizybot" className="rounded-full" />
+    <div className="overflow-hidden">
+      <div className="flex  flex-col gap-2 justify-between bg-gradient-to-r from-blue-950 from-80% to-blue-800 text-white p-2">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex items-center">
+            <div className="rounded-full w-8 h-8 flex items-center justify-center mr-2">
+              <img src={logo} alt="Wizybot" className="rounded-full" />
+            </div>
+            <div>
+              <div className="font-medium text-[8px]">Chat with</div>
+              <div className="text-xs">Wizybot</div>
+            </div>
           </div>
-          <div>
-            <div className="font-medium text-[8px]">Chat with</div>
-            <div className="text-xs">Wizybot</div>
+          <div className="flex items-center">
+            <ShoppingCart className="w-5 h-5 mr-2" />
+            <ChevronDown
+              className="w-5 h-5 cursor-pointer hover:scale-110 transition-all"
+              onClick={toggleMinimize}
+            />
           </div>
         </div>
-        <div className="flex items-center">
-          <ShoppingCart className="w-5 h-5 mr-2" />
-          <ChevronDown
-            className="w-5 h-5 cursor-pointer hover:scale-110 transition-all"
-            onClick={toggleMinimize}
-          />
+        <div className="flex items-center gap-1">
+          <span className="size-1 rounded-full bg-green-500/80 inline-block mr-1"></span>
+          <p className="text-xs font-medium">We reply immediately!</p>
         </div>
       </div>
       {/* Wave Effect */}
-      <div className="bg-gradient-to-r from-blue-950 from-80% to-blue-800 w-full ">
+      <div className="bg-gradient-to-r from-blue-950 from-80% to-blue-800 w-full h-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 80"
-          className=""
+          className="block"
+          style={{ display: "block", marginBottom: "-5px" }}
         >
           <path
             fill="#f9fafb"
