@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
-import { useRamdomQuotes } from "./useRamdomQuotes";
 import type { ChatMessage } from "../interfaces/ChatMessage";
 import { CONSTANTS } from "../utils/constans";
 import { formatDate } from "../utils/dates";
+import apiQuotes from "../api/apiQuotes";
 
 export const useChat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const { getRandomQuotes } = useRamdomQuotes();
   const responseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   //welcome message
@@ -46,15 +45,13 @@ export const useChat = () => {
     const userMessage = newMessage(text, false);
     setMessages((prev) => [...prev, userMessage]);
     setLoading(true);
-
     const timerId = setTimeout(async () => {
       setLoading(false);
-
       if (text.toLowerCase() === CONSTANTS.PRODUCT_RECOMMENDATION_TRIGGER) {
         const agentMessage = newMessage("¡Show me some products!", true, true);
         setMessages((prev) => [...prev, agentMessage]);
       } else {
-        const agentMessage = newMessage(await getRandomQuotes(), true);
+        const agentMessage = newMessage(await apiQuotes(), true);
         setMessages((prev) => [...prev, agentMessage]);
       }
       responseTimerRef.current = null;

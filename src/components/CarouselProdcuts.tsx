@@ -1,47 +1,15 @@
 import { useState } from "react";
-
-const products = [
-  {
-    id: "d9363f01-991c-4ce2-8c49-f650aaa70c0b",
-    displayTitle: "Safely Everyday Laundry Detergent",
-    url: "https://wizybot-demo-store.myshopify.com/products/safely-everyday-laundry-detergent",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0779/8125/3922/files/ScreenShot2023-06-24at12.16.35PM.png?v=1687627070",
-  },
-  {
-    id: "dac37fff-526e-4fbc-88ba-188ab82161ad",
-    displayTitle: "Bushel Lamper Plastic Laundry Basket",
-    url: "https://wizybot-demo-store.myshopify.com/products/bushel-lamper-plastic-laundry-basket",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0779/8125/3922/files/ScreenShot2023-06-24at11.58.56AM.png?v=1687626239",
-  },
-  {
-    id: "de2268ef-a4a5-4adb-bd05-fe7455cc30b2",
-    displayTitle:
-      "Costway Refrigerator Small Freezer Cooler Fridge Compact 3.2 cu ft. Unit",
-    url: "https://wizybot-demo-store.myshopify.com/products/costway-refrigerator-small-freezer-cooler-fridge-compact-3-2-cu-ft-unit",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0779/8125/3922/files/ScreenShot2023-06-23at4.03.40PM.png?v=1687554306",
-  },
-  {
-    id: "df61efb4-c51e-43f8-8904-1382f7a20f1c",
-    displayTitle: "Women's Studded Heeled Moto Boots",
-    url: "https://wizybot-demo-store.myshopify.com/products/womens-studded-heeled-moto-boots",
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0779/8125/3922/files/ScreenShot2023-06-23at1.02.50PM.png?v=1687543437",
-  },
-];
-
-function getRandomPrice() {
-  return (Math.random() * 90 + 10).toFixed(2);
-}
+import useProductsRecommendations from "../hooks/useProductsRecommendations";
 
 export default function CarouselProducts() {
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const products = useProductsRecommendations();
 
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
   const handleDotClick = (index: number) => {
     setActiveItemIndex(index);
   };
+  console.log(products);
+  if (products.length === 0) return null; // evitar error al renderizar sin datos
 
   return (
     <div className="flex gap-3  flex-col overflow-x-hidden p-2   bg-white rounded-xl   ">
@@ -58,7 +26,7 @@ export default function CarouselProducts() {
               {products[activeItemIndex].displayTitle}
             </p>
             <p className="text-green-600 font-bold text-xs">
-              {getRandomPrice()}
+              {products[activeItemIndex].price}
             </p>
             <a
               href={products[activeItemIndex].url}

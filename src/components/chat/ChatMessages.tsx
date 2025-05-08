@@ -23,9 +23,9 @@ const ChatMessages = ({
     >
       {messages.map((message, index) =>
         message.showProductRecommendation ? (
-          <div key={index} className="flex justify-start w-full">
+          <div key={message.id} className="flex justify-start w-full">
             <div className="rounded-lg shadow-sm w-full">
-              <CarouselProducts />
+              <CarouselProducts key={message.id} />
             </div>
           </div>
         ) : (
