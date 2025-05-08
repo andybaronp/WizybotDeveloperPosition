@@ -12,11 +12,12 @@ const ChatWindow = () => {
     setIsMinimized(!isMinimized);
   };
   const { messages, sendMessage, loading } = useChat();
+
   return (
-    <div className="relative px-2 w-full ">
-      <div className="absolute bottom-5 right-4 sm:right-5">
+    <div className="relative px-2 w-full bg-red-700">
+      <div className="">
         {isMinimized ? (
-          <div className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform delay-100 ">
+          <div className="absolute bottom-5 right-4 flex flex-col items-center cursor-pointer hover:scale-110 transition-transform delay-100">
             <div className="flex justify-end w-full">
               <span className="relative flex size-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-600 opacity-75"></span>
@@ -25,7 +26,7 @@ const ChatWindow = () => {
             </div>
 
             <div
-              className="-mt-3 w-12 h-12 rounded-full flex items-center justify-center  "
+              className="-mt-3 w-12 h-12 rounded-full flex items-center justify-center"
               onClick={toggleMinimize}
             >
               <img
@@ -36,7 +37,7 @@ const ChatWindow = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col  not-last:  h-[620px] w-[370px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
+          <div className="absolute bottom-5 right-1/2 translate-x-1/2 sm:right-5 sm:translate-x-0 flex flex-col h-[90vh] sm:h-[704px] max-w-sm w-[380px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
             <ChatHeader toggleMinimize={toggleMinimize} />
             <ChatMessages messages={messages} loading={loading} />
             <ChatInput onSend={sendMessage} />
