@@ -27,7 +27,7 @@ const ChatInput = ({ onSend }: { onSend: (text: string) => void }) => {
         <input
           type="text"
           placeholder="Write a message..."
-          className="flex-1 outline-none h-6 text-xs mx-2 bg-transparent"
+          className="flex-1 outline-none h-6   mx-2 bg-transparent"
           value={message}
           onChange={onMessageChange}
         />

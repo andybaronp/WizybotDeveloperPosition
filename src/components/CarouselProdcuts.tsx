@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useProductsRecommendations from "../hooks/useProductsRecommendations";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function CarouselProducts() {
   const products = useProductsRecommendations();
@@ -11,7 +12,24 @@ export default function CarouselProducts() {
 
   if (products.length === 0) return null;
   return (
-    <div className="flex gap-3  flex-col overflow-x-hidden p-2   bg-white rounded-xl   ">
+    <div className="flex gap-3  flex-col overflow-x-hidden p-2   bg-white rounded-xl  relative ">
+      <div className="px-1 w-full flex    justify-between items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <button
+          className="cursor-pointer hover:scale-110 transition-all"
+          onClick={() => setActiveItemIndex((prev) => prev - 1)}
+          disabled={activeItemIndex === 0}
+        >
+          <ChevronLeft className="size-5 bg-gray-300 rounded-full p-1 hover:bg-gray-400 transition-all" />
+        </button>
+        <button
+          className="cursor-pointer hover:scale-110 transition-all"
+          onClick={() => setActiveItemIndex((prev) => prev + 1)}
+          disabled={activeItemIndex === products.length - 1}
+        >
+          <ChevronRight className="size-5 bg-gray-300 rounded-full p-1 hover:bg-gray-400 transition-all" />
+        </button>
+      </div>
+
       <div className="flex gap-2 overflow-x-hidden">
         <div className="  w-full   min-w-[90%] rounded-xl  h-24  p-2 flex gap-2  items-center   ">
           <img
