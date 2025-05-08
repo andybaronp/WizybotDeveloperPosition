@@ -5,6 +5,7 @@ import ChatMessages from "./ChatMessages";
 import logo from "../../assets/wizybot.webp";
 import { useState } from "react";
 import { useChat } from "../../hooks/useChat";
+
 const ChatWindow = () => {
   const [isMinimized, setIsMinimized] = useState<boolean>(true);
   const toggleMinimize = () => {
@@ -12,7 +13,7 @@ const ChatWindow = () => {
   };
   const { messages, sendMessage, loading } = useChat();
   return (
-    <div className="relative px-2 w-full">
+    <div className="relative px-2 w-full ">
       <div className="absolute bottom-5 right-4 sm:right-5">
         {isMinimized ? (
           <div className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform delay-100 ">
@@ -35,7 +36,7 @@ const ChatWindow = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col  not-last:  h-[720px] w-[370px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
+          <div className="flex flex-col  not-last:  h-[620px] w-[370px] bg-gray-50 shadow-md rounded-xl overflow-hidden border border-gray-200">
             <ChatHeader toggleMinimize={toggleMinimize} />
             <ChatMessages messages={messages} loading={loading} />
             <ChatInput onSend={sendMessage} />
