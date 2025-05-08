@@ -108,6 +108,16 @@ npm test
     └── vite.config.ts
 ```
 
+## Screenshots
+
+![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746738925/wizy/v3zkvnu3efdsjh7duy4i.png)
+
+![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746739010/wizy/a3gfgvxgedfd6kyvc19g.png)
+
+![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746739011/wizy/zuvlwrzisnmk6fzdkdi3.png)
+
+![Chat Window](https://res.cloudinary.com/jrdev/image/upload/v1746739011/wizy/opqstjpiwgwlxcvcd7wc.png)
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any features, bug fixes, or improvements.
