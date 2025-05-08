@@ -61,8 +61,8 @@ export default function ProductCarousel() {
               className="size-16 object-contain  "
             />
             <div className="flex flex-col gap-2">
-              <p className="font-semibold text-sm">
-                {products[activeItemIndex]?.displayTitle.slice(0, 56)}
+              <p className="font-semibold text-sm min-h-[2.5rem] line-clamp-2 ">
+                {products[activeItemIndex]?.displayTitle}
               </p>
               <p className="text-green-600 font-bold">
                 {products[activeItemIndex]?.price}
